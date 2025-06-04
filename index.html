@@ -3,158 +3,740 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empower Coaching | Life & Leadership Coaching</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Compassionate Coaching - Transform Through Connection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sage-green: #9caf88;
+            --warm-beige: #f5f2ed;
+            --soft-taupe: #d4c4b0;
+            --deep-brown: #5d4e37;
+            --cream-white: #faf9f7;
+            --muted-rose: #d4a574;
+            --charcoal: #3a3a3a;
+            --light-sage: #b8c9a4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            overflow-x: hidden;
+            background-color: var(--cream-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(156, 175, 136, 0.1);
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(156, 175, 136, 0.15);
+            background: rgba(250, 249, 247, 0.98);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--sage-green);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--sage-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--soft-taupe) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(156,175,136,0.04)" cx="200" cy="200" r="100"/><circle fill="rgba(212,196,176,0.06)" cx="800" cy="300" r="150"/><circle fill="rgba(156,175,136,0.03)" cx="300" cy="700" r="80"/></svg>');
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--deep-brown);
+            line-height: 1.2;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards 0.3s;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards 0.6s;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--charcoal);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards 0.9s;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--sage-green);
+            color: white;
+            padding: 16px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards 1.2s;
+            box-shadow: 0 8px 25px rgba(156, 175, 136, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(156, 175, 136, 0.4);
+            background: var(--light-sage);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--deep-brown);
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 4rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--sage-green);
+            margin: 1.5rem auto 0;
+        }
+
+        /* Services */
+        .services {
+            background: var(--cream-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(156, 175, 136, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--sage-green), var(--muted-rose));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(156, 175, 136, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--deep-brown);
+        }
+
+        .service-card p {
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* About */
+        .about-section {
+            background: var(--warm-beige);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--deep-brown);
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--charcoal);
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-content .highlight {
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+
+        .about-content .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--deep-brown);
+            border-left: 3px solid var(--sage-green);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: -25px;
+            bottom: -25px;
+            background: linear-gradient(135deg, var(--sage-green), var(--muted-rose));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+            filter: sepia(10%) saturate(90%) brightness(105%);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--cream-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
+            position: relative;
+            border: 1px solid rgba(156, 175, 136, 0.08);
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Crimson Text', serif;
+            font-size: 4rem;
+            color: var(--sage-green);
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            opacity: 0.3;
+        }
+
+        .testimonial p {
+            color: var(--charcoal);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 500;
+            color: var(--deep-brown);
+            font-size: 0.95rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--warm-beige);
+        }
+
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--deep-brown);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid rgba(156, 175, 136, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sage-green);
+            box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.1);
+        }
+
+        .form-group textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--sage-green);
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: 100%;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            background: var(--light-sage);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(156, 175, 136, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card,
+            .testimonial {
+                padding: 2rem 1.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav id="navbar">
         <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Empower Coaching Logo">
-                <span>Empower Coaching</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+            <div class="nav-container">
+                <div class="logo">Jill Ren Coaching</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Jill</a></li>
+                    <li><a href="#contact">Connect</a></li>
                 </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Unlock Your Potential</h1>
-            <p>Transform your life and leadership with personalized coaching designed to help you achieve your goals and maximize your impact.</p>
-            <a href="contact.html" class="btn">Book a Free Session</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Through Connection</h1>
+                <p class="subtitle">Where deep conversations meet meaningful change</p>
+                <p>In a world that often prioritizes the secular pursuits of success, I believe true transformation happens when we honor both our ambitions and our humanity. Through compassionate coaching rooted in genuine care and understanding, we'll explore not just where you want to go, but who you want to become along the way.</p>
+                <a href="#contact" class="cta-button">Begin the Conversation</a>
+            </div>
         </div>
     </section>
 
-    <section class="intro">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2>Why Coaching Matters</h2>
-            <p>As a certified life and leadership coach, I help individuals and professionals break through barriers, clarify their vision, and develop strategies for success. Whether you're looking to advance your career, improve relationships, or find greater fulfillment, coaching can provide the tools and accountability you need.</p>
-        </div>
-    </section>
-
-    <section class="services-preview">
-        <div class="container">
-            <h2>My Services</h2>
+            <h2 class="section-title">How We'll Work Together</h2>
+            <p class="section-subtitle">Each journey is unique, just as you are</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Leadership Coaching</h3>
-                    <p>Develop the skills and mindset to lead with confidence and inspire your team.</p>
-                    <a href="services.html#leadership" class="btn-small">Learn More</a>
+                    <h3>Life Transition Coaching</h3>
+                    <p>Whether you're navigating career pivots, relationship changes, or personal evolution, we'll create space for deep reflection and intentional growth. Having walked through my own transition from corporate leadership to coaching, I understand the courage it takes to pursue authentic paths.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Life Balance</h3>
-                    <p>Create harmony between your professional ambitions and personal well-being.</p>
-                    <a href="services.html#life-balance" class="btn-small">Learn More</a>
+                    <h3>Leadership & Purpose</h3>
+                    <p>Drawing from experiences across startups and established organizations, we'll explore leadership that's both effective and deeply human. Together, we'll discover how your unique perspective—shaped by your values and experiences—can create meaningful impact.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Goal Achievement</h3>
-                    <p>Set meaningful goals and develop actionable plans to achieve them.</p>
-                    <a href="services.html#goal-achievement" class="btn-small">Learn More</a>
+                    <h3>Compassionate Self-Discovery</h3>
+                    <p>For those who, like me, feel deeply and care profoundly about others, we'll explore how to honor your sensitivity as a strength while building resilience. Sometimes the most compassionate people need coaching on extending that same kindness to themselves.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials">
+    <!-- Why Coaching Section -->
+    <section id="why-coaching" class="about-section">
         <div class="container">
-            <h2>Client Success Stories</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial active">
-                    <img src="images/testimonial1.jpg" alt="Sarah J.">
-                    <blockquote>
-                        "Working with this coach transformed my approach to leadership. I've been promoted twice in the last year and my team's performance has never been better."
-                    </blockquote>
-                    <cite>- Sarah J., Marketing Director</cite>
+            <h2 class="section-title">Why I Choose Coaching</h2>
+            <p class="section-subtitle">A personal journey toward meaningful connection</p>
+            <div class="about">
+                <div class="about-content">
+                    <p>My path to coaching began with my own transformation as a client. After years of achieving professional milestones and navigating complex organizational challenges, I discovered something profound: the conversations that changed me most weren't about strategy or optimization—they were about being truly seen and understood.</p>
+                    
+                    <div class="quote">
+                        "I realized that beneath all our secular pursuits lies a fundamental human need to be witnessed, to be heard, and to know that someone genuinely cares about our flourishing."
+                    </div>
+                    
+                    <p>This revelation ignited something I couldn't ignore. While I'm grateful for the analytical skills and strategic thinking developed through my professional journey, what truly energizes me is creating space for the kind of deep conversations that honor both our ambitions and our humanity.</p>
+                    
+                    <p>Starting fresh in coaching feels both vulnerable and authentic. It's a return to what has always been truest about me: an almost overwhelming desire to help others flourish, paired with a deep belief in the transformative power of compassionate attention.</p>
                 </div>
-                <div class="testimonial">
-                    <img src="images/testimonial2.jpg" alt="Michael T.">
-                    <blockquote>
-                        "The life balance strategies I learned helped me reduce stress and reconnect with my family while still excelling in my career."
-                    </blockquote>
-                    <cite>- Michael T., Software Engineer</cite>
-                </div>
-                <div class="testimonial">
-                    <img src="images/testimonial3.jpg" alt="Lisa M.">
-                    <blockquote>
-                        "I went from feeling stuck to launching my own business in just six months. The accountability and guidance were exactly what I needed."
-                    </blockquote>
-                    <cite>- Lisa M., Entrepreneur</cite>
-                </div>
-                <div class="slider-controls">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
+                <div class="about-image">
+                    <img src="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='300' fill='%23f5f2ed'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%235d4e37' font-size='14' font-family='serif'%3EJill's Portrait%3C/text%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%235d4e37' font-size='14' font-family='serif'%3EHere%3C/text%3E%3C/svg%3E" alt="Jill Ren Professional Portrait">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta">
+    <!-- About Section -->
+    <section id="about" class="services">
         <div class="container">
-            <h2>Ready for Transformation?</h2>
-            <p>Take the first step toward achieving your goals. Schedule your complimentary 30-minute discovery session today.</p>
-            <a href="contact.html" class="btn">Get Started</a>
+            <h2 class="section-title">Meet Jill</h2>
+            <p class="section-subtitle">Where experience meets heart</p>
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.8rem;">My journey has taken me from the halls of <span class="highlight">Stanford</span> to boardrooms in Silicon Valley, from startup environments to established institutions, and through both private sector innovation and public service. While these experiences shaped my understanding of systems and strategy, they also revealed something deeper: my greatest fulfillment comes from moments of genuine human connection.</p>
+                
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.8rem;">As an <span class="highlight">INFP</span>, I've always been drawn to the stories beneath the surface. Like the characters in "The Best of Youth"—my favorite film—I believe that compassion and understanding can transform not just individual lives, but entire communities. That Italian masterpiece taught me that our most profound growth often happens through the relationships we build and the care we extend to one another.</p>
+                
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--charcoal);">Beyond the professional achievements and secular milestones, what drives me is an deep desire to help others flourish. I believe in the power of deep conversations, in creating spaces where vulnerability is welcomed, and in approaching each person's journey with the reverence it deserves.</p>
+            </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Begin</h2>
+            <p class="section-subtitle">Every transformation starts with a single conversation</p>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">What's stirring in your heart right now?</label>
+                    <textarea id="message" name="message" placeholder="Share what's calling you toward growth, what challenges you're facing, or simply what you're curious about exploring together..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Your Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <div class="logo">
-                        <img src="images/logo.png" alt="Empower Coaching Logo">
-                        <span>Empower Coaching</span>
-                    </div>
-                    <p>Helping individuals and leaders unlock their potential and achieve extraordinary results through personalized coaching.</p>
-                    <div class="socials">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section contact">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-envelope"></i> coach@empowercoaching.com</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Success Ave, Suite 100<br>San Francisco, CA 94107</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Empower Coaching. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 Jill Ren Coaching. Created with care for transformative conversations.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending with care...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for sharing with me. I look forward to our conversation and will reach out within 24 hours to schedule our first connection.');
+                event.target.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.service-card, .testimonial');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
