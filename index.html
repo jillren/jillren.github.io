@@ -854,7 +854,7 @@
             });
         }
 
-        // Intersection Observer for animations
+        // Intersection Observer for animations (disabled for service cards)
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -869,10 +869,18 @@
             });
         }, observerOptions);
 
-        // Observe elements for scroll animations (excluding service cards)
+        // No animations for service cards - they stay static
         document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.testimonial');
-            animateElements.forEach(el => {
+            // Service cards remain static - no animations
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+            
+            // Only animate testimonials if they exist
+            const testimonials = document.querySelectorAll('.testimonial');
+            testimonials.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'all 0.8s ease';
