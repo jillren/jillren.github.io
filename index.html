@@ -252,11 +252,12 @@
             padding: 3rem 2.5rem;
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
-            transition: all 0.4s ease;
             border: 1px solid rgba(156, 175, 136, 0.08);
             position: relative;
             overflow: hidden;
             margin-bottom: 2rem;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .service-card::before {
@@ -681,20 +682,20 @@
                 <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--deep-brown); font-weight: 500;">Education & Certifications</h3>
                 <div class="credentials-grid">
                     <div class="credential-item">
-                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='none' stroke='%23B31B1B' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='32' fill='none' stroke='%23B31B1B' stroke-width='1'/%3E%3Cpath d='M25 40 L55 40 M30 35 L50 35 M30 45 L50 45' stroke='%23B31B1B' stroke-width='2' fill='none'/%3E%3Ctext x='40' y='60' text-anchor='middle' font-size='6' fill='%23B31B1B'%3ESTANFORD%3C/text%3E%3Ctext x='40' y='68' text-anchor='middle' font-size='6' fill='%23B31B1B'%3E1891%3C/text%3E%3C/svg%3E" alt="Stanford University" class="credential-logo">
-                        <div class="credential-text">Stanford University<br>Master's Degree</div>
+                        <img src="stanford-logo.png" alt="Stanford University" class="credential-logo">
+                        <div class="credential-text">Stanford University<br>MA</div>
                     </div>
                     <div class="credential-item">
-                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='none' stroke='%23B31B1B' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='32' fill='none' stroke='%23B31B1B' stroke-width='1'/%3E%3Cpath d='M30 30 Q40 25 50 30 Q40 35 30 30 M30 40 Q40 35 50 40 Q40 45 30 40 M30 50 Q40 45 50 50 Q40 55 30 50' stroke='%23B31B1B' stroke-width='1.5' fill='none'/%3E%3Ctext x='40' y='66' text-anchor='middle' font-size='5' fill='%23B31B1B'%3ERENMIN UNIVERSITY%3C/text%3E%3Ctext x='40' y='72' text-anchor='middle' font-size='4' fill='%23B31B1B'%3E1937%3C/text%3E%3C/svg%3E" alt="Renmin University" class="credential-logo">
+                        <img src="renmin-logo.png" alt="Renmin University" class="credential-logo">
                         <div class="credential-text">Renmin University<br>BBA & BS</div>
                     </div>
                     <div class="credential-item">
-                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='20' width='60' height='40' rx='5' fill='%23253B80'/%3E%3Cpath d='M20 35 Q30 25 40 35 Q50 45 60 35' stroke='%23F7B500' stroke-width='3' fill='none'/%3E%3Ctext x='40' y='32' text-anchor='middle' font-size='8' fill='white' font-weight='bold'%3EICF%3C/text%3E%3Ctext x='40' y='50' text-anchor='middle' font-size='4' fill='white'%3ECoaching Federation%3C/text%3E%3C/svg%3E" alt="ICF" class="credential-logo">
-                        <div class="credential-text">ICF PCC<br>(In Progress)</div>
+                        <img src="icf-logo.png" alt="ICF" class="credential-logo">
+                        <div class="credential-text">ICF PCC</div>
                     </div>
                     <div class="credential-item">
-                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='%23253B80' stroke='%23253B80' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='white' stroke-width='2'/%3E%3Ctext x='40' y='35' text-anchor='middle' font-size='10' fill='white' font-weight='bold'%3ECTEDU%3C/text%3E%3Ctext x='40' y='46' text-anchor='middle' font-size='5' fill='white'%3ECERTIFIED COACH%3C/text%3E%3Ctext x='40' y='52' text-anchor='middle' font-size='5' fill='white'%3ECOACH TRAINING EDU%3C/text%3E%3C/svg%3E" alt="Coach Training EDU" class="credential-logo">
-                        <div class="credential-text">Coach Training EDU<br>(In Progress)</div>
+                        <img src="ctedu-logo.png" alt="Coach Training EDU" class="credential-logo">
+                        <div class="credential-text">Coach Training EDU</div>
                     </div>
                 </div>
                 <div class="languages">
@@ -748,7 +749,7 @@
             
             <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(156, 175, 136, 0.1);">
                 <p style="font-size: 1.1rem; color: var(--deep-brown); margin-bottom: 1rem;"><strong>Ready to explore if we're a good fit?</strong></p>
-                <p style="font-size: 1rem; color: var(--charcoal); line-height: 1.6;">Email me at <a href="mailto:renruijing71@gmail.com" style="color: var(--sage-green); text-decoration: none;">renruijing71@gmail.com</a> to set up a complimentary 15-minute "let's connect" session. No pressure, just an authentic conversation to see if we're aligned for a coaching relationship.</p>
+                <p style="font-size: 1rem; color: var(--charcoal); line-height: 1.6;">Fill out the form below to set up a complimentary 15-minute "let's connect" session. No pressure, just an authentic conversation to see if we're aligned for a coaching relationship.</p>
             </div>
             <form class="contact-form" action="https://formspree.io/f/xdkojkvo" method="POST" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -869,9 +870,9 @@
             });
         }, observerOptions);
 
-        // Observe elements for scroll animations
+        // Observe elements for scroll animations (excluding service cards)
         document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.service-card, .testimonial');
+            const animateElements = document.querySelectorAll('.testimonial');
             animateElements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
