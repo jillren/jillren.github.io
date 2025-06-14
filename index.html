@@ -242,10 +242,9 @@
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
+            display: block;
+            max-width: 800px;
+            margin: 4rem auto 0;
         }
 
         .service-card {
@@ -257,6 +256,7 @@
             border: 1px solid rgba(156, 175, 136, 0.08);
             position: relative;
             overflow: hidden;
+            margin-bottom: 2rem;
         }
 
         .service-card::before {
