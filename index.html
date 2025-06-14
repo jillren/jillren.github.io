@@ -238,6 +238,7 @@
         /* Services */
         .services {
             background: var(--cream-white);
+            margin-top: 2rem;
         }
 
         .services-grid {
@@ -356,9 +357,58 @@
             filter: sepia(10%) saturate(90%) brightness(105%);
         }
 
-        /* Testimonials */
-        .testimonials {
-            background: var(--cream-white);
+        /* Credentials */
+        .credentials {
+            background: var(--warm-beige);
+            padding: 4rem 0;
+        }
+
+        .credentials-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+
+        .credential-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .credential-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .credential-logo:hover {
+            opacity: 1;
+        }
+
+        .credential-text {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .languages {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(156, 175, 136, 0.2);
+            font-size: 0.95rem;
+            color: var(--deep-brown);
         }
 
         .testimonials-grid {
@@ -546,17 +596,21 @@
             <div class="hero-content">
                 <h1>Transform Through Connection</h1>
                 <p class="subtitle">Where deep conversations meet meaningful change</p>
-                <p>You know that feeling when you've checked all the boxes — the promotion, the title, the salary — but something still feels... off?</p>
+                <p>You have everything you need to create an extraordinary life.</p>
                 
-                <p>When you're successful on paper but restless in reality?</p>
+                <p>The vision. The dreams. The values that matter most to you.</p>
                 
-                <p>When you wonder if there's more to life than the next milestone?</p>
+                <p>But sometimes life gets noisy. Busy. Complicated.</p>
                 
-                <p>I get it.</p>
+                <p>Sometimes you need someone who believes in your potential as much as you do — and helps you cut through the noise to hear your own voice clearly.</p>
                 
-                <p>Because I've been there too.</p>
+                <p>That's where I come in.</p>
                 
-                <p>This is where real transformation begins — not in the doing, but in the being.</p>
+                <p>I'm here to help you create your best life from within. Not by fixing what's wrong, but by amplifying what's already right. Not by giving you answers, but by helping you trust the wisdom you already carry.</p>
+                
+                <p>Your best life isn't out there waiting to be found.</p>
+                
+                <p>It's in here, waiting to be created.</p>
                 <a href="#contact" class="cta-button">Let's Talk</a>
             </div>
         </div>
@@ -620,20 +674,62 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Credentials Section -->
+    <section class="credentials">
+        <div class="container">
+            <div class="credentials-content">
+                <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--deep-brown); font-weight: 500;">Education & Certifications</h3>
+                <div class="credentials-grid">
+                    <div class="credential-item">
+                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='none' stroke='%23B31B1B' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='32' fill='none' stroke='%23B31B1B' stroke-width='1'/%3E%3Cpath d='M25 40 L55 40 M30 35 L50 35 M30 45 L50 45' stroke='%23B31B1B' stroke-width='2' fill='none'/%3E%3Ctext x='40' y='60' text-anchor='middle' font-size='6' fill='%23B31B1B'%3ESTANFORD%3C/text%3E%3Ctext x='40' y='68' text-anchor='middle' font-size='6' fill='%23B31B1B'%3E1891%3C/text%3E%3C/svg%3E" alt="Stanford University" class="credential-logo">
+                        <div class="credential-text">Stanford University<br>Master's Degree</div>
+                    </div>
+                    <div class="credential-item">
+                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='none' stroke='%23B31B1B' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='32' fill='none' stroke='%23B31B1B' stroke-width='1'/%3E%3Cpath d='M30 30 Q40 25 50 30 Q40 35 30 30 M30 40 Q40 35 50 40 Q40 45 30 40 M30 50 Q40 45 50 50 Q40 55 30 50' stroke='%23B31B1B' stroke-width='1.5' fill='none'/%3E%3Ctext x='40' y='66' text-anchor='middle' font-size='5' fill='%23B31B1B'%3ERENMIN UNIVERSITY%3C/text%3E%3Ctext x='40' y='72' text-anchor='middle' font-size='4' fill='%23B31B1B'%3E1937%3C/text%3E%3C/svg%3E" alt="Renmin University" class="credential-logo">
+                        <div class="credential-text">Renmin University<br>BBA & BS</div>
+                    </div>
+                    <div class="credential-item">
+                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='20' width='60' height='40' rx='5' fill='%23253B80'/%3E%3Cpath d='M20 35 Q30 25 40 35 Q50 45 60 35' stroke='%23F7B500' stroke-width='3' fill='none'/%3E%3Ctext x='40' y='32' text-anchor='middle' font-size='8' fill='white' font-weight='bold'%3EICF%3C/text%3E%3Ctext x='40' y='50' text-anchor='middle' font-size='4' fill='white'%3ECoaching Federation%3C/text%3E%3C/svg%3E" alt="ICF" class="credential-logo">
+                        <div class="credential-text">ICF PCC<br>(In Progress)</div>
+                    </div>
+                    <div class="credential-item">
+                        <img src="data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='38' fill='%23253B80' stroke='%23253B80' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='white' stroke-width='2'/%3E%3Ctext x='40' y='35' text-anchor='middle' font-size='10' fill='white' font-weight='bold'%3ECTEDU%3C/text%3E%3Ctext x='40' y='46' text-anchor='middle' font-size='5' fill='white'%3ECERTIFIED COACH%3C/text%3E%3Ctext x='40' y='52' text-anchor='middle' font-size='5' fill='white'%3ECOACH TRAINING EDU%3C/text%3E%3C/svg%3E" alt="Coach Training EDU" class="credential-logo">
+                        <div class="credential-text">Coach Training EDU<br>(In Progress)</div>
+                    </div>
+                </div>
+                <div class="languages">
+                    <strong>Languages:</strong> English, Mandarin
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">Meet Jill</h2>
             <p class="section-subtitle">Where experience meets heart</p>
             <div class="about">
                 <div class="about-content">
-                    <p>Here's my story: Stanford University (Master's), Renmin University (BBA & BS), startup chaos, corporate boardrooms, Silicon Valley madness. The whole journey from Beijing to Palo Alto and everywhere in between.</p>
+                    <p>Here's my story:</p>
                     
-                    <p>I've built strategies, led teams, navigated acquisitions, pivoted products. I speak <span class="highlight">English and Mandarin</span>, which means I've learned to read between the lines in multiple cultures. I've been the person in the room translating not just languages, but entire ways of thinking.</p>
+                    <p>From startup chaos to corporate boardrooms, from Silicon Valley madness to global teams. The whole journey from Beijing to Palo Alto and everywhere in between.</p>
                     
-                    <p>But here's what all those experiences really taught me: success without connection feels hollow. Achievement without understanding feels empty. And sometimes the most strategic thing you can do is slow down and ask "What do I actually want?"</p>
+                    <p>I've built strategies, led teams, navigated acquisitions, pivoted products.</p>
                     
-                    <p>Like the characters in "The Best of Youth" — my favorite film — I believe our most profound growth happens through the relationships we build and the care we extend to one another. That Italian masterpiece showed me that compassion isn't soft. It's revolutionary.</p>
+                    <p>I've been the person in the room translating not just languages, but entire ways of thinking.</p>
+                    
+                    <p>But here's what all those experiences really taught me:</p>
+                    
+                    <p>Success without connection feels hollow.</p>
+                    
+                    <p>Achievement without understanding feels empty.</p>
+                    
+                    <p>And sometimes the most strategic thing you can do is slow down and ask "What do I actually want?"</p>
+                    
+                    <p>Like the characters in "The Best of Youth" — my favorite film — I believe our most profound growth happens through the relationships we build and the care we extend to one another.</p>
+                    
+                    <p>That Italian masterpiece showed me that compassion isn't soft.</p>
+                    
+                    <p>It's revolutionary.</p>
                     
                     <p>So yes, I bring all that corporate experience to our conversations. But more importantly, I bring curiosity. Genuine care. And the absolute belief that you already have everything you need — sometimes you just need someone to help you see it.</p>
                 </div>
@@ -649,6 +745,11 @@
         <div class="container">
             <h2 class="section-title">Ready to Start?</h2>
             <p class="section-subtitle">Every transformation begins with a single conversation</p>
+            
+            <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(156, 175, 136, 0.1);">
+                <p style="font-size: 1.1rem; color: var(--deep-brown); margin-bottom: 1rem;"><strong>Ready to explore if we're a good fit?</strong></p>
+                <p style="font-size: 1rem; color: var(--charcoal); line-height: 1.6;">Email me at <a href="mailto:renruijing71@gmail.com" style="color: var(--sage-green); text-decoration: none;">renruijing71@gmail.com</a> to set up a complimentary 15-minute "let's connect" session. No pressure, just an authentic conversation to see if we're aligned for a coaching relationship.</p>
+            </div>
             <form class="contact-form" action="https://formspree.io/f/xdkojkvo" method="POST" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
