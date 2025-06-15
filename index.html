@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compassionate Coaching - Transform Through Connection</title>
+    <title>Jill Ren Coaching - Transform Through Connection</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -37,7 +37,6 @@
             padding: 0 20px;
         }
 
-        /* Typography */
         h1, h2, h3 {
             font-family: 'Crimson Text', serif;
             font-weight: 600;
@@ -164,7 +163,7 @@
 
         .hero p {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             color: var(--charcoal);
             opacity: 0;
             animation: fadeInUp 1.2s ease forwards 0.9s;
@@ -185,6 +184,7 @@
             opacity: 0;
             animation: fadeInUp 1.2s ease forwards 1.2s;
             box-shadow: 0 8px 25px rgba(156, 175, 136, 0.3);
+            margin-top: 1rem;
         }
 
         .cta-button:hover {
@@ -238,13 +238,11 @@
         /* Services */
         .services {
             background: var(--cream-white);
-            margin-top: 2rem;
         }
 
-        .services-grid {
-            display: block;
+        .services-container {
             max-width: 800px;
-            margin: 4rem auto 0;
+            margin: 0 auto;
         }
 
         .service-card {
@@ -253,11 +251,9 @@
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
             border: 1px solid rgba(156, 175, 136, 0.08);
+            margin-bottom: 2.5rem;
             position: relative;
             overflow: hidden;
-            margin-bottom: 2rem;
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .service-card::before {
@@ -270,60 +266,42 @@
             background: linear-gradient(90deg, var(--sage-green), var(--muted-rose));
         }
 
-        .service-card:hover {
-            box-shadow: 0 12px 35px rgba(156, 175, 136, 0.15);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             color: var(--deep-brown);
         }
 
         .service-card p {
             color: var(--charcoal);
-            line-height: 1.7;
-            font-size: 1rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
         }
 
-        /* About */
-        .about-section {
-            background: var(--warm-beige);
+        .service-card p:last-child {
+            margin-bottom: 0;
         }
 
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
+        /* Why Coaching Section */
+        .why-coaching {
+            background: var(--cream-white);
         }
 
-        .about-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--deep-brown);
-            line-height: 1.3;
+        .why-coaching-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        .about-content p {
-            color: var(--charcoal);
-            margin-bottom: 1.8rem;
+        .why-coaching-content p {
             font-size: 1.05rem;
             line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.8rem;
         }
 
-        .about-content .highlight {
-            color: var(--sage-green);
-            font-weight: 500;
-        }
-
-        .about-content .quote {
+        .quote {
             font-style: italic;
             font-size: 1.1rem;
             color: var(--deep-brown);
@@ -332,41 +310,53 @@
             margin: 2rem 0;
         }
 
-        .about-image {
-            position: relative;
+        /* About Section */
+        .about-section {
+            background: var(--warm-beige);
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            right: -25px;
-            bottom: -25px;
-            background: linear-gradient(135deg, var(--sage-green), var(--muted-rose));
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0.8;
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            position: relative;
-            z-index: 1;
-            filter: sepia(10%) saturate(90%) brightness(105%);
+        .portrait-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .portrait {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.2);
+        }
+
+        .story-content {
+            text-align: left;
+        }
+
+        .story-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.8rem;
         }
 
         /* Credentials */
         .credentials {
-            background: var(--warm-beige);
-            padding: 4rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(156, 175, 136, 0.2);
         }
 
-        .credentials-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+        .credentials h3 {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--deep-brown);
+            font-weight: 500;
         }
 
         .credentials-grid {
@@ -411,51 +401,31 @@
             color: var(--deep-brown);
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
-            position: relative;
-            border: 1px solid rgba(156, 175, 136, 0.08);
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-family: 'Crimson Text', serif;
-            font-size: 4rem;
-            color: var(--sage-green);
-            position: absolute;
-            top: 15px;
-            left: 25px;
-            opacity: 0.3;
-        }
-
-        .testimonial p {
-            color: var(--charcoal);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            padding-top: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 500;
-            color: var(--deep-brown);
-            font-size: 0.95rem;
-        }
-
         /* Contact */
         .contact-section {
             background: var(--warm-beige);
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(156, 175, 136, 0.1);
+        }
+
+        .contact-intro p:first-child {
+            font-size: 1.1rem;
+            color: var(--deep-brown);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-intro p:last-child {
+            font-size: 1rem;
+            color: var(--charcoal);
+            line-height: 1.6;
         }
 
         .contact-form {
@@ -552,24 +522,12 @@
                 font-size: 1.1rem;
             }
 
-            .about {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card,
-            .testimonial {
-                padding: 2rem 1.5rem;
-            }
-
             section {
                 padding: 4rem 0;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -597,19 +555,12 @@
                 <h1>Transform Through Connection</h1>
                 <p class="subtitle">Where deep conversations meet meaningful change</p>
                 <p>You have everything you need to create an extraordinary life.</p>
-                
                 <p>The vision. The dreams. The values that matter most to you.</p>
-                
                 <p>But sometimes life gets noisy. Busy. Complicated.</p>
-                
                 <p>Sometimes you need someone who believes in your potential as much as you do — and helps you cut through the noise to hear your own voice clearly.</p>
-                
                 <p>That's where I come in.</p>
-                
                 <p>I'm here to help you create your best life from within. Not by fixing what's wrong, but by amplifying what's already right. Not by giving you answers, but by helping you trust the wisdom you already carry.</p>
-                
                 <p>Your best life isn't out there waiting to be found.</p>
-                
                 <p>It's in here, waiting to be created.</p>
                 <a href="#contact" class="cta-button">Let's Talk</a>
             </div>
@@ -621,120 +572,99 @@
         <div class="container">
             <h2 class="section-title">How We'll Work Together</h2>
             <p class="section-subtitle">Because one size fits none</p>
-            <div class="services-grid">
+            <div class="services-container">
                 <div class="service-card">
                     <h3>Compassionate Life Transitions</h3>
                     <p>You're staring at a crossroads.</p>
-                    
                     <p>Maybe it's a career pivot that scares and excites you. Maybe it's a relationship that's shifting. Maybe you just know something needs to change, but you can't name what.</p>
-                    
                     <p>Here's what I know:</p>
-                    
                     <p>The biggest transformations happen when you stop rushing toward the answer and start sitting with the questions.</p>
-                    
                     <p>When you honor both your ambition and your humanity.</p>
-                    
                     <p>When you remember that feeling deeply isn't a weakness — it's your superpower.</p>
                 </div>
                 <div class="service-card">
                     <h3>Leadership & Purpose</h3>
                     <p>Leadership isn't about having all the answers.</p>
-                    
                     <p>(Thank goodness, right?)</p>
-                    
                     <p>It's about asking better questions. Creating space for others to shine. Building something that matters.</p>
-                    
                     <p>Whether you're leading a team of 2 or 200, stepping into a new role, or wondering how to lead with both effectiveness and heart — we'll explore what leadership looks like when it's authentically you.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Coaching Section -->
-    <section id="why-coaching" class="about-section">
+    <!-- Why I Choose Coaching Section -->
+    <section id="why-coaching" class="why-coaching">
         <div class="container">
             <h2 class="section-title">Why I Choose Coaching</h2>
-            <p class="section-subtitle">A personal journey toward meaningful connection</p>
-            <div class="about">
-                <div class="about-content">
-                    <p>My path to coaching began with my own transformation as a client. After years of achieving professional milestones and navigating complex organizational challenges, I discovered something profound: the conversations that changed me most weren't about strategy or optimization—they were about being truly seen and understood.</p>
-                    
-                    <div class="quote">
-                        "I realized that beneath all our secular pursuits lies a fundamental human need to be witnessed, to be heard, and to know that someone genuinely cares about our flourishing."
-                    </div>
-                    
-                    <p>This revelation ignited something I couldn't ignore. While I'm grateful for the analytical skills and strategic thinking developed through my professional journey, what truly energizes me is creating space for the kind of deep conversations that honor both our ambitions and our humanity.</p>
-                    
-                    <p>Starting fresh in coaching feels both vulnerable and authentic. It's a return to what has always been truest about me: an almost overwhelming desire to help others flourish, paired with a deep belief in the transformative power of compassionate attention.</p>
+            <p class="section-subtitle">Plot twist: I was the skeptical one</p>
+            <div class="why-coaching-content">
+                <p>I used to think coaching was... fluffy.</p>
+                <p>You know the type? All feelings and no strategy. All "how does that make you feel?" and no "here's what we do next."</p>
+                <p>Then I became a client.</p>
+                <div class="quote">
+                    "The conversations that changed me weren't about optimizing my productivity or fixing my strategy. They were about someone seeing me — really seeing me — and asking the questions I didn't know I needed to answer."
                 </div>
-                <div class="about-image">
-                    <img src="jill-portrait.jpg" alt="Jill Ren Professional Portrait">
-                </div>
+                <p>That's when I realized:</p>
+                <p>All my corporate experience, all the strategic thinking, all the problem-solving skills — they were just tools.</p>
+                <p>What actually creates transformation is connection. Understanding. The kind of conversation where you feel heard, not fixed.</p>
+                <p>So here I am, starting fresh in coaching.</p>
+                <p>Vulnerable? Yes.</p>
+                <p>Authentic? Absolutely.</p>
+                <p>Because this isn't about having all the answers — it's about helping you find yours.</p>
             </div>
         </div>
     </section>
 
-    <!-- Credentials Section -->
-    <section class="credentials">
-        <div class="container">
-            <div class="credentials-content">
-                <h3 style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--deep-brown); font-weight: 500;">Education & Certifications</h3>
-                <div class="credentials-grid">
-                    <div class="credential-item">
-                        <img src="stanford-logo.png" alt="Stanford University" class="credential-logo">
-                        <div class="credential-text">Stanford University<br>MA</div>
-                    </div>
-                    <div class="credential-item">
-                        <img src="renmin-logo.png" alt="Renmin University" class="credential-logo">
-                        <div class="credential-text">Renmin University<br>BBA & BS</div>
-                    </div>
-                    <div class="credential-item">
-                        <img src="icf-logo.png" alt="ICF" class="credential-logo">
-                        <div class="credential-text">ICF PCC</div>
-                    </div>
-                    <div class="credential-item">
-                        <img src="ctedu-logo.png" alt="Coach Training EDU" class="credential-logo">
-                        <div class="credential-text">Coach Training EDU</div>
-                    </div>
-                </div>
-                <div class="languages">
-                    <strong>Languages:</strong> English, Mandarin
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">Meet Jill</h2>
             <p class="section-subtitle">Where experience meets heart</p>
-            <div class="about">
-                <div class="about-content">
+            
+            <div class="about-content">
+                <div class="portrait-container">
+                    <img src="jill-portrait.jpg" alt="Jill Ren Professional Portrait" class="portrait">
+                </div>
+                
+                <div class="story-content">
                     <p>Here's my story:</p>
-                    
                     <p>From startup chaos to corporate boardrooms, from Silicon Valley madness to global teams. The whole journey from Beijing to Palo Alto and everywhere in between.</p>
-                    
                     <p>I've built strategies, led teams, navigated acquisitions, pivoted products.</p>
-                    
                     <p>I've been the person in the room translating not just languages, but entire ways of thinking.</p>
-                    
                     <p>But here's what all those experiences really taught me:</p>
-                    
                     <p>Success without connection feels hollow.</p>
-                    
                     <p>Achievement without understanding feels empty.</p>
-                    
                     <p>And sometimes the most strategic thing you can do is slow down and ask "What do I actually want?"</p>
-                    
                     <p>Like the characters in "The Best of Youth" — my favorite film — I believe our most profound growth happens through the relationships we build and the care we extend to one another.</p>
-                    
                     <p>That Italian masterpiece showed me that compassion isn't soft.</p>
-                    
                     <p>It's revolutionary.</p>
-                    
                     <p>So yes, I bring all that corporate experience to our conversations. But more importantly, I bring curiosity. Genuine care. And the absolute belief that you already have everything you need — sometimes you just need someone to help you see it.</p>
                 </div>
-                <div class="about-image">
-                    <img src="jill-portrait.jpg" alt="Jill Ren Professional Portrait">
+                
+                <div class="credentials">
+                    <h3>Education & Certifications</h3>
+                    <div class="credentials-grid">
+                        <div class="credential-item">
+                            <img src="stanford-logo.png" alt="Stanford University" class="credential-logo">
+                            <div class="credential-text">Stanford University<br>MA</div>
+                        </div>
+                        <div class="credential-item">
+                            <img src="renmin-logo.png" alt="Renmin University" class="credential-logo">
+                            <div class="credential-text">Renmin University<br>BBA & BS</div>
+                        </div>
+                        <div class="credential-item">
+                            <img src="icf-logo.png" alt="ICF" class="credential-logo">
+                            <div class="credential-text">ICF PCC</div>
+                        </div>
+                        <div class="credential-item">
+                            <img src="ctedu-logo.png" alt="Coach Training EDU" class="credential-logo">
+                            <div class="credential-text">Coach Training EDU</div>
+                        </div>
+                    </div>
+                    <div class="languages">
+                        <strong>Languages:</strong> English, Mandarin
+                    </div>
                 </div>
             </div>
         </div>
@@ -746,10 +676,11 @@
             <h2 class="section-title">Ready to Start?</h2>
             <p class="section-subtitle">Every transformation begins with a single conversation</p>
             
-            <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(156, 175, 136, 0.1);">
-                <p style="font-size: 1.1rem; color: var(--deep-brown); margin-bottom: 1rem;"><strong>Ready to explore if we're a good fit?</strong></p>
-                <p style="font-size: 1rem; color: var(--charcoal); line-height: 1.6;">Fill out the form below to set up a complimentary 15-minute "let's connect" session. No pressure, just an authentic conversation to see if we're aligned for a coaching relationship.</p>
+            <div class="contact-intro">
+                <p>Ready to explore if we're a good fit?</p>
+                <p>Fill out the form below to set up a complimentary 15-minute "let's connect" session. No pressure, just an authentic conversation to see if we're aligned for a coaching relationship.</p>
             </div>
+
             <form class="contact-form" action="https://formspree.io/f/xdkojkvo" method="POST" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -854,46 +785,12 @@
             });
         }
 
-        // Intersection Observer for animations (disabled for service cards)
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // No animations for service cards - they stay static
-        document.addEventListener('DOMContentLoaded', () => {
-            // Service cards remain static - no animations
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            });
-            
-            // Only animate testimonials if they exist
-            const testimonials = document.querySelectorAll('.testimonial');
-            testimonials.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.8s ease';
-                observer.observe(el);
-            });
-        });
-
-        // Add subtle parallax effect to hero
+        // Subtle parallax effect for hero only
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             if (hero && scrolled < window.innerHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
         });
     </script>
