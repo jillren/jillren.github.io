@@ -209,6 +209,12 @@
             padding: 6rem 0;
         }
 
+        /* Special spacing for first section after hero */
+        .services {
+            background: var(--cream-white);
+            padding-top: 8rem;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.8rem;
@@ -238,11 +244,19 @@
         /* Services */
         .services {
             background: var(--cream-white);
+            padding-top: 8rem;
         }
 
         .services-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
         }
 
         .service-card {
@@ -251,7 +265,6 @@
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(156, 175, 136, 0.1);
             border: 1px solid rgba(156, 175, 136, 0.08);
-            margin-bottom: 2.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -276,7 +289,7 @@
             color: var(--charcoal);
             line-height: 1.8;
             font-size: 1.05rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-card p:last-child {
@@ -529,6 +542,11 @@
             .service-card {
                 padding: 2rem 1.5rem;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -573,21 +591,19 @@
             <h2 class="section-title">How We'll Work Together</h2>
             <p class="section-subtitle">Because one size fits none</p>
             <div class="services-container">
-                <div class="service-card">
-                    <h3>Compassionate Life Transitions</h3>
-                    <p>You're staring at a crossroads.</p>
-                    <p>Maybe it's a career pivot that scares and excites you. Maybe it's a relationship that's shifting. Maybe you just know something needs to change, but you can't name what.</p>
-                    <p>Here's what I know:</p>
-                    <p>The biggest transformations happen when you stop rushing toward the answer and start sitting with the questions.</p>
-                    <p>When you honor both your ambition and your humanity.</p>
-                    <p>When you remember that feeling deeply isn't a weakness — it's your superpower.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Leadership & Purpose</h3>
-                    <p>Leadership isn't about having all the answers.</p>
-                    <p>(Thank goodness, right?)</p>
-                    <p>It's about asking better questions. Creating space for others to shine. Building something that matters.</p>
-                    <p>Whether you're leading a team of 2 or 200, stepping into a new role, or wondering how to lead with both effectiveness and heart — we'll explore what leadership looks like when it's authentically you.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Compassionate Life Transitions</h3>
+                        <p>You're staring at a crossroads. Maybe it's a career pivot that scares and excites you. Maybe it's a relationship that's shifting. Maybe you just know something needs to change, but you can't name what.</p>
+                        
+                        <p>Here's what I know: The biggest transformations happen when you stop rushing toward the answer and start sitting with the questions. When you honor both your ambition and your humanity. When you remember that feeling deeply isn't a weakness — it's your superpower.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Leadership & Purpose</h3>
+                        <p>Leadership isn't about having all the answers. (Thank goodness, right?) It's about asking better questions. Creating space for others to shine. Building something that matters.</p>
+                        
+                        <p>Whether you're leading a team of 2 or 200, stepping into a new role, or wondering how to lead with both effectiveness and heart — we'll explore what leadership looks like when it's authentically you.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -629,7 +645,7 @@
                 
                 <div class="story-content">
                     <p>Here's my story:</p>
-                    <p>From startup chaos to corporate boardrooms, from Silicon Valley madness to global teams. The whole journey from Beijing to Palo Alto and everywhere in between.</p>
+                    <p>From startup chaos to corporate boardrooms, from Silicon Valley madness to global teams. The whole journey from Xi'an to Palo Alto and everywhere in between.</p>
                     <p>I've built strategies, led teams, navigated acquisitions, pivoted products.</p>
                     <p>I've been the person in the room translating not just languages, but entire ways of thinking.</p>
                     <p>But here's what all those experiences really taught me:</p>
